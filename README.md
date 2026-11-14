@@ -87,5 +87,3 @@ Sweet spot: ×8-12. Results vary by voice and seed: generate a few and keep the 
 ## Credit
 
 Inspired by Lazarus (Papailiopoulos et al., [arXiv 2611.15118](https://arxiv.org/abs/2611.15118)), which reprogrammed dormant neurons.
-
-Work in progress. Go find your own.
