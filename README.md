@@ -1,4 +1,4 @@
-# Mapping human-speech neurons in Qwen TTS (WIP)
+# Mapping human-speech neurons in Qwen TTS
 
 Qwen3-TTS sometimes breathes, laughs or pauses on its own. These are the neurons behind those moments:
 a set of 400 plus four small trait groups, 417 in all. Turn them up and the moments stop being accidents.
@@ -30,7 +30,7 @@ out' = out + (α - 1) · (Σ_k a_k · g_k) · d_L    over the listed neurons k o
 ```
 
 `a_k` is the neuron's activation, `out` the MLP output. α = 8 to 12 (strength guide below). Nothing else changes.
-The directions `d_L` are not in this WIP release.
+The directions `d_L` are in [directions.json](directions.json) (layers 20-27, unit length).
 
 **Trait groups: nudged up or down.** Each trait neuron's activation is shifted by a fixed amount before `down_proj`:
 
@@ -82,7 +82,11 @@ Full list with each neuron's strong % in [NEURONS.md](NEURONS.md) and [neurons.j
 | ×12 | The human sounds come through more strongly. The top of the sweet spot. |
 | ×16+ | More human sounds still, but ordinary speech breaks into gibberish. ×24 and ×32 are worse. |
 
-Sweet spot: ×8-12. Results vary by voice and seed: generate a few and keep the best.
+Sweet spot: ×8-12.
+
+## Reproduce
+
+[reproduce.py](reproduce.py) rebuilds the laugh, whisper, question, yeah, second-voice and reply clips from neurons.json and directions.json (run instructions at its top).
 
 ## Credit
 
